@@ -1,34 +1,34 @@
 <html>
  <head>
   <meta charset="UTF-8">
-</head> 
+</head>
 <body>
 
-  
+
 Grupa CE
 
 - git config --global user.email ""
   Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
-    
+
 - git commit -a -m ""
   Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
   Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
-  
+
 - git diff --staged
-  
+
 - git checkout -b "branch"
   W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
-  
-  
+
+
 - git log --graph --all
   Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
-  
+
 - git branch -d "branch"
 
 - git remote add "remote_name" "git url"
 
 - git fetch "remote" "branch"
-  
+
 
 Początek :)
   <p><b>git config --global user.name "John Doe"</b></br>
@@ -38,7 +38,7 @@ Początek :)
     Użycie opcji <b>git config --system</b> powoduje czytanie lub edytowanie konfiguracji z pliku /etc/gitconfig, która stosuje się do każdego użytkownika i repozytorium w systemie.</br>
     Opcja <b>git config --global</b> służy do czytania lub edytowania konfiguracji z pliku ~/.gitconfig lub ~/.config/git/config, który zawiera konfigurację specyficzną dla danego użytkownika.</br>
     Opcja <b>git config --local</b> czyta lub edytuje konfigurację z pliku .git/config, należącego do aktualnego repozytorium, określającego ustawienia specyficzne tylko dla niego. Jest to domyślny poziom konfiguracji, w przypadku braku określenia odpowiedniej opcji w poleceniu <b>git config</b>.</br>
-    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe. 
+    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe.
   </p>
 
   <p><b>git commit -a -m ""</b></br>
@@ -47,7 +47,7 @@ Początek :)
 
   -a - also stages files (modified and deleted, but not new) (works almost like git add -u)
 
-  -m "" - with commit message inside "" 
+  -m "" - with commit message inside ""
   </p>
   git add . - dodaje wszystkie pliki do śledzenia
   git checkout "branch" - przełączanie do nowej gałęzi
@@ -59,6 +59,21 @@ Początek :)
     HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
   </p>
 git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
+
+
+
+
+<h1>Grupa CF</h1>
+
+<h2>git config --global color.ui true</h2>
+<p>Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.</p>
+<h2>git commit "filename"</h2>
+<p>Scommitowanie tylko wybranego pliku</p>
+<h2>git branch -v</h2>
+<h2>git push "remote" "branch" </h2>
+<h2>git log "branch" --not "branch"</h2>
+<h2>git bisect (start, bad, good, reset) </h2>
+
 
 </body>
 </html>
