@@ -138,7 +138,9 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git commit "filename"
     </dt>
     <dd>
-      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.</br>
+      przykład: git commit "index.html". Po wykonaniu takiej komendy zostanie przesłany tylko plik index.html.
+      Uruchomi się edytor tekstu w celu utworzenia opisu zmian. Komentarz można również utworzyć w terminalu przy pomocy atrubuty -m (git commit "index.html" -m "tresc opisu zmian") co przy niewielkich wiadomościach przyspierza proces comitowania.
     </dd>
     <dt>
       git branch "name"
