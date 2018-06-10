@@ -24,31 +24,37 @@
 </head>
 <body>
   <main class="main_content">
-  
+
 Grupa CE
 
-- git config --global user.email ""
+- <b>git config --global user.email ""</b>
   Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
-    
-- git commit -a -m ""
+
+- <b>git commit -a -m ""</b>
   Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
   Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
-  
-- git diff --staged
-  
-- git checkout -b "branch"
+
+- <b>git diff --staged</b>
+  Komenda pokazuje zmiany, które zostały wysłane do poczekalni, ale różnią się od ostatniej migawki. W przeciwieństwie do git status, pokazuje nam rzeczywiste zmiany w postaci kodu.
+  Przydatne, gdy zmienimy coś w pliku i dodamy do śledzenia za pomocą git add, aby sprawdzić, co dokładnie zostało zmienione.
+
+
+- <b>git checkout -b "branch"</b>
   W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
-  
-  
-- git log --graph --all
+
+
+- <b>git log --graph --all</b>
   Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
-  
-- git branch -d "branch"
 
-- git remote add "remote_name" "git url"
+- <b>git branch -d "branch"</b>
 
-- git fetch "remote" "branch"
-  
+- <b>git remote add "remote_name" "git url"</b>
+
+- <b>git fetch "remote" "branch"</b>
+
+
+
+
 
 Początek :)
   <p><b>git config --global user.name "John Doe"</b></br>
@@ -58,7 +64,7 @@ Początek :)
     Użycie opcji <b>git config --system</b> powoduje czytanie lub edytowanie konfiguracji z pliku /etc/gitconfig, która stosuje się do każdego użytkownika i repozytorium w systemie.</br>
     Opcja <b>git config --global</b> służy do czytania lub edytowania konfiguracji z pliku ~/.gitconfig lub ~/.config/git/config, który zawiera konfigurację specyficzną dla danego użytkownika.</br>
     Opcja <b>git config --local</b> czyta lub edytuje konfigurację z pliku .git/config, należącego do aktualnego repozytorium, określającego ustawienia specyficzne tylko dla niego. Jest to domyślny poziom konfiguracji, w przypadku braku określenia odpowiedniej opcji w poleceniu <b>git config</b>.</br>
-    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe. 
+    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe.
   </p>
 
   <p><b>git commit -a -m ""</b></br>
@@ -67,7 +73,7 @@ Początek :)
 
   -a - also stages files (modified and deleted, but not new) (works almost like git add -u)
 
-  -m "" - with commit message inside "" 
+  -m "" - with commit message inside ""
   </p>
   git add . - dodaje wszystkie pliki do śledzenia
   git checkout "branch" - przełączanie do nowej gałęzi
@@ -123,7 +129,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
   <title>Komendy Git</title>
 </head>
 <body>
-  
+
   <dl>
     <dt>
       git config --global color.ui true
@@ -165,13 +171,13 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git blame -C "filename"
     </dt>
     <dd>
-      Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
+      Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu.
     </dd>
     <dt>
       git bisect (start, bad, good, reset)
     </dt>
     <dd>
-      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
+      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.
     </dd>
 	<dt>
       gitk -all
