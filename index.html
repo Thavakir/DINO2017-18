@@ -129,7 +129,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git config --global color.ui true
     </dt>
     <dd>
-      Włącza kolorowanie wyników dzałania rodzin komend git w konsolach które to wspierają. Jeśli output jest przekierowany do pliku, to nie zostaną dodane sekwencje ANSI mówiące o kolorze.
+      Włącza kolorowanie wyników dzałania rodzin komend git w konsolach które to wspierają. Jeśli output jest przekierowany do pliku, to nie zostaną dodane sekwencje ANSI mówiące o kolorze. Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
     </dd>
     <dt>
       git commit "filename"
@@ -141,7 +141,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git branch "name"
     </dt>
     <dd>
-      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'. Można skrócić te dwa polecenia do git checkout -b "name".
     </dd>
     <dt>
       git branch -v
@@ -153,13 +153,13 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git push "remote" "branch"
     </dt>
     <dd>
-      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch"
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch", czyli pushuje lokalny branch do zdalnego repozytorium.
     </dd>
     <dt>
       git log "branch" --not "branch"
     </dt>
     <dd>
-      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument.
+      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc żadna gałąź nie jest podana jako argument.
     </dd>
     <dt>
       git blame -C "filename"
