@@ -71,7 +71,7 @@ Początek :)
   -m "" - with commit message inside ""
   </p>
   git add . - dodaje wszystkie pliki do śledzenia
-  git checkout "branch" - przełączanie do nowej gałęzi
+  git checkout "branch" - przełączanie do nowej gałęzi (komenda wykona się poprawnie jedynie, gdy nowa gałąź została wcześniej utworzona za pomocą git branch "name")
   <br>
 <b>git branch "name"</b> - tworzy nową gałąź o podanej nazwie
 
@@ -80,6 +80,15 @@ Początek :)
     HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
   </p>
 git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
+
+
+<h3>Grupa CF</h3>
+<h5>git config --global color.ui true</h5> 
+<p>Włącza wszystkie domyślne ustawienia dotyczące kolorowania. Gdy ta wartość jest ustawiona na true, Git będzie pokazywał w kolorze wyniki swojego działania na terminalu. </p>
+<h5>git commit "filename"</h5>
+<p>Tworzy commit o komentarzu "filename"</p>
+
+=======
   <section class="command">
     <h2 class="command__title">git config --global user.email ""</h2>
     <p class="command__description">
@@ -90,6 +99,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <h2 class="command__title">git diff --staged</h2>
     <p class="command__description">
       Pokazuje co zostało zmienione w obserwowanych plikach.
+      --staged jest synonimem ----cached.
     </p>
   </section>
   <section class="command">
@@ -118,6 +128,12 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
     </p>
   </section>
+  <section class="command">
+    <h2 class="command__title">git remote add "remote_name" "git url"</h2>
+    <p class="command__description">
+      Komenda służy do dodawania zdalnych repozytoriów pod skrótem. Dzięki temu będziemy mogli z łatwością odnosić się w przyszłości. W miejsce "remote name" wpsiujemy skrót pod jakim ma zostać zapisane dodatkowe repzytorium. W polu "git url" umieszczamy link do tego repozytorium. Przy pomocy tego następnym razem gdy będziemy chcieli np. zrobić fetch od naszego współpracownika wystarczy, że użyjemy fetch z parametrem, który wpisaliśmy w "remote name".
+    </p>
+  </section>
 </main>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -125,14 +141,18 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 </head>
 <body>
 
+  <h7>GRUPA CF</h7>
+
   <dl>
-    <dt>
+      <dt>
       git config --global color.ui true
     </dt>
     <dd>
+
       Git może automatyczie pokazywać w kolorze większość wyników swojego działania. Można bardzo dokładnie określić co ma być pokazane w kolorze, oraz w jakis sposób.</br>
       Color.iu ustawione na "true" włącza kolorowanie wyników dzałania rodzin komend git w konsolach które to wspierają. Jeśli output jest przekierowany do pliku, to nie zostaną dodane sekwencje ANSI mówiące o kolorze.</br>
       Inne możliwe ustawienia Color.io to "false" i "always".
+      Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.
     </dd>
     <dt>
       git commit "filename"
@@ -141,6 +161,8 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.</br>
       przykład: git commit "index.html". Po wykonaniu takiej komendy zostanie przesłany tylko plik index.html.
       Uruchomi się edytor tekstu w celu utworzenia opisu zmian. Komentarz można również utworzyć w terminalu przy pomocy atrubuty -m (git commit "index.html" -m "tresc opisu zmian") co przy niewielkich wiadomościach przyspierza proces comitowania.
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'. Szczególnie przydatne gdy dokonaliśmy zmian w wielu plikach projektu, a commitować chcemy tylko jeden.
+
     </dd>
     <dt>
       git branch "name"
@@ -158,13 +180,18 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git push "remote" "branch"
     </dt>
     <dd>
-      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch"
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch". Inaczej wypycha gałąź branch na server remote.
+      Ogólna postać komendy: git push [nazwa zdalnego repozytorium] [nazwa gałęzi]
+      Przydatna gdy chcemy udostępnić dokonane przez nas zmiany członkom zespołu, którzy pracują przy tym samym projekcie.
     </dd>
     <dt>
       git log "branch" --not "branch"
     </dt>
     <dd>
-      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument.
+     Słuzy do wyświetlenia listy commitów z gałęzi „branch” z wyjątkiem w postaci gałęzi „branch”.
+     W praktyce, nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument. 
+     Samej komendy git log używamy by spojrzeć w historię projektu i sprawdzić dokonane zmiany.
+
     </dd>
     <dt>
       git blame -C "filename"
@@ -176,14 +203,18 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git bisect (start, bad, good, reset)
     </dt>
     <dd>
+
       Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.
+      
     </dd>
 	<dt>
       gitk -all
     </dt>
     <dd>
-      gitk - The Git repository browse.
-      gitk -all - Show all refs (branches, tags, etc.).
+     gitk – Przeglądarka repozytorium na gicie. gitk -all – Wyświetla wszystkie branche, tagi, etc.  
+	 Przydatne gdy chcemy wyswietlic całą zawartość naszego repozytorium.
+	 
+
     </dd>
   </dl>
 </body>
