@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
+ 
 <head>
+
   <meta charset="UTF-8">
   <style>
     .main_content {
@@ -25,6 +28,94 @@
 </head>
 <body>
   <main class="main_content">
+=======
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <title>Komendy z Gita</title>
+   
+    <style>
+        .main_content {
+            white-space: pre-line;
+			
+			
+			
+        }
+       
+        .command {
+            position: relative;
+            white-space: nowrap;
+        }
+       
+        .command__title {
+            margin: 25px 0;
+            color: rgb(6 59 61);
+        }
+       
+        .command__description {
+            margin: 5px 0;
+            white-space: pre-line;
+			font-size: 20px;
+            color: rgb(60 179 113);
+        }
+       
+        .command__example {
+            font-size: 15px;
+            margin: 5px 0;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+ <center>
+<body class="container">
+    <main class="main_content">
+ 
+        <h1 class="text-center">Grupa CE</h1>
+        <section class="command">
+            <h2 class="command__title">Komenda: git config --global user.email "user_name"</h2>
+            <p class="command__description">
+                Opisz: Ustawia globalnie email użytkownika.</p>
+            <p class="command__example">Przykład użycia: git config --global user.email "user@st.amu.edu.pl"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git diff --staged</h2>
+            <p class="command__description">
+                Opisz: Pokazuje co zostało zmienione w obserwowanych plikach.
+            </p>
+            <p class="command__example">Przykład użycia: git diff --staged</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git checkout -b "branch"</h2>
+            <p class="command__description">
+                Opisz: Przechodzi na gałąź o nazwie branch, jeśli taka nie istnieje to tworzy nową.
+            </p>
+            <p class="command__example">Przykład użycia: git checkout -b "user_branch"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git log --graph --all</h2>
+            <p class="command__description">
+                Opisz: Wypisuje listę poprzednich commitów. Opcja graph dodaje graficzny podgląd gałęzi. Opcja all pokazuje też inne gałęzie.
+            </p>
+            <p class="command__example">Przykład użycia: git log --graph --all</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git branch -d "branch"</h2>
+            <p class="command__description">
+                Opisz: Usuwa gałąź o nazwie branch.
+            </p>
+            <p class="command__example">Przykład użycia: git branch -d "user_branch"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git fetch "remote" "branch"</h2>
+            <p class="command__description">
+                Opisz: Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
+            </p>
+            <p class="command__example">Przykład użycia: git fetch "remote" "user_branch"</p>
+        </section>
+    </main>
+
 
 Grupa CE
 
@@ -82,13 +173,6 @@ Początek :)
 git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
 
 
-<h3>Grupa CF</h3>
-<h5>git config --global color.ui true</h5> 
-<p>Włącza wszystkie domyślne ustawienia dotyczące kolorowania. Gdy ta wartość jest ustawiona na true, Git będzie pokazywał w kolorze wyniki swojego działania na terminalu. </p>
-<h5>git commit "filename"</h5>
-<p>Tworzy commit o komentarzu "filename"</p>
-
-=======
   <section class="command">
     <h2 class="command__title">git config --global user.email ""</h2>
     <p class="command__description">
@@ -216,6 +300,11 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 	 
 
     </dd>
+    <dt>
+	git merge upstream/master
+    </dt>
+    <dd>
+	    Polecenie zacznie od próby aktualizowania, jeśli jakieś zmiany zostały przeprowadzone. W przeciwnym wypadku wyświetlony zostanie komunikat, że wszystie pliki są "Up-to-date".
   </dl>
 </body>
 </html>
