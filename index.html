@@ -200,11 +200,11 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 <body>
   <h7>GRUPA CF</h7>
   <dl>
-    <dt>
+     <dt>
       git config --global color.ui true
     </dt>
     <dd>
-	 Zmiana kolorystyki wyników komend.  Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
+	 Zmiana kolorystyki komend.  Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
     </dd>
     <dt>
       git commit "filename"
@@ -216,7 +216,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git branch "name"
     </dt>
     <dd>
-      Komenda tworzy gałąź "name". Żeby przejść do niej należy napisać 'git checkout "name"'. Można skrócić te dwa polecenia do git checkout -b "name".
+      Komenda tworzy gałąź o zadanej nazwie.
     </dd>
     <dt>
       git branch -v
@@ -234,12 +234,12 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git log "branch" --not "branch"
     </dt>
     <dd>
-	  Wyświetlenie listy commitów z gałęzi "branch", bez gałęzi "branch", czyli nic nie zostanie wyświetlone, ponieważ przekazane argumenty są puste.
+	  Wyświetlenie listy z jednego branch'a, bez podanego branch'a, czyli nic nie zostanie wyświetlone, ponieważ przekazane argumenty są puste.
     </dd>
     <dt>
       git blame -C "filename"
     </dt>
-    <dd>
+      <dd>
       Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
     </dd>
       Służy do wyszukiwania błędów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
