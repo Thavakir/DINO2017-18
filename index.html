@@ -1,9 +1,36 @@
-<html>
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
+
 </head>
 <body>
 
+
+=======
+  <style>
+    .main_content {
+      white-space: pre-line;
+    }
+
+    .command {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .command__title {
+      margin: 10px 0;
+    }
+
+    .command__description {
+      margin: 5px 0;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <main class="main_content">
+ 
 
 Grupa CE
 
@@ -62,16 +89,108 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 
 <h1>Grupa CF</h1>
 
-<h2>git config --global color.ui true</h2>
-<p>Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.</p>
-<h2>git commit "filename"</h2>
-<p>Scommitowanie tylko wybranego pliku</p>
-<h2>git branch -v</h2>
-W trybie listy wyświetla SHA1 i dodaje szczegółowy opis brancha
-<h2>git push "remote" "branch" </h2>
-Wrzucenie zmian do zdalnego repozytorium "remote" i do gałęzi "branch"
-<h2>git log "branch" --not "branch"</h2>
-<h2>git bisect (start, bad, good, reset) </h2>
-
+=======
+  <section class="command">
+    <h2 class="command__title">git config --global user.email ""</h2>
+    <p class="command__description">
+      Ustawia globalnie email użytkownika.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git diff --staged</h2>
+    <p class="command__description">
+      Pokazuje co zostało zmienione w obserwowanych plikach.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git checkout -b "branch"</h2>
+    <p class="command__description">
+      Przechodzi na gałąź o nazwie branch, jeśli taka nie istnieje to tworzy nową.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git log --graph --all</h2>
+    <p class="command__description">
+      Wypisuje listę poprzednich commitów.
+      Opcja graph dodaje graficzny podgląd gałęzi.
+      Opcja all pokazuje też inne gałęzie.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git branch -d "branch"</h2>
+    <p class="command__description">
+      Usuwa gałąź o nazwie branch.
+    </p>
+  </section>
+  <section class="command">
+    <h2 class="command__title">git fetch "remote" "branch"</h2>
+    <p class="command__description">
+      Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
+    </p>
+  </section>
+</main>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Komendy Git</title>
+</head>
+<body>
+  
+  <dl>
+    <dt>
+      git config --global color.ui true
+    </dt>
+    <dd>
+      Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.
+    </dd>
+    <dt>
+      git commit "filename"
+    </dt>
+    <dd>
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
+    </dd>
+    <dt>
+      git branch "name"
+    </dt>
+    <dd>
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
+    </dd>
+    <dt>
+      git branch -v
+    </dt>
+    <dd>
+      W trybie listy wyświetla skrót sha1 i temat commita w jednej linii dla każdej sekcji head, ze statusem względem nielokalnej gałęzi.
+    </dd>
+    <dt>
+      git push "remote" "branch"
+    </dt>
+    <dd>
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch"
+    </dd>
+    <dt>
+      git log "branch" --not "branch"
+    </dt>
+    <dd>
+      Nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument.
+    </dd>
+    <dt>
+      git blame -C "filename"
+    </dt>
+    <dd>
+      Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
+    </dd>
+    <dt>
+      git bisect (start, bad, good, reset)
+    </dt>
+    <dd>
+      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
+    </dd>
+	<dt>
+      gitk -all
+    </dt>
+    <dd>
+      gitk - The Git repository browse.
+      gitk -all - Show all refs (branches, tags, etc.).
+    </dd>
+  </dl>
 </body>
 </html>
