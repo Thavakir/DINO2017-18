@@ -1,54 +1,120 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
+ 
 <head>
-  <meta charset="UTF-8">
-  <style>
-    .main_content {
-      white-space: pre-line;
-    }
-
-    .command {
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .command__title {
-      margin: 10px 0;
-    }
-
-    .command__description {
-      margin: 5px 0;
-      white-space: pre-line;
-    }
-  </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <title>Komendy z Gita</title>
+   
+    <style>
+        .main_content {
+            white-space: pre-line;
+			
+			
+			
+        }
+       
+        .command {
+            position: relative;
+            white-space: nowrap;
+        }
+       
+        .command__title {
+            margin: 25px 0;
+            color: rgb(6 59 61);
+        }
+       
+        .command__description {
+            margin: 5px 0;
+            white-space: pre-line;
+			font-size: 20px;
+            color: rgb(60 179 113);
+        }
+       
+        .command__example {
+            font-size: 15px;
+            margin: 5px 0;
+            white-space: pre-line;
+        }
+    </style>
 </head>
-<body>
-  <main class="main_content">
-  
+ <center>
+<body class="container">
+    <main class="main_content">
+ 
+        <h1 class="text-center">Grupa CE</h1>
+        <section class="command">
+            <h2 class="command__title">Komenda: git config --global user.email "user_name"</h2>
+            <p class="command__description">
+                Opisz: Ustawia globalnie email użytkownika.</p>
+            <p class="command__example">Przykład użycia: git config --global user.email "user@st.amu.edu.pl"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git diff --staged</h2>
+            <p class="command__description">
+                Opisz: Pokazuje co zostało zmienione w obserwowanych plikach.
+            </p>
+            <p class="command__example">Przykład użycia: git diff --staged</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git checkout -b "branch"</h2>
+            <p class="command__description">
+                Opisz: Przechodzi na gałąź o nazwie branch, jeśli taka nie istnieje to tworzy nową.
+            </p>
+            <p class="command__example">Przykład użycia: git checkout -b "user_branch"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git log --graph --all</h2>
+            <p class="command__description">
+                Opisz: Wypisuje listę poprzednich commitów. Opcja graph dodaje graficzny podgląd gałęzi. Opcja all pokazuje też inne gałęzie.
+            </p>
+            <p class="command__example">Przykład użycia: git log --graph --all</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git branch -d "branch"</h2>
+            <p class="command__description">
+                Opisz: Usuwa gałąź o nazwie branch.
+            </p>
+            <p class="command__example">Przykład użycia: git branch -d "user_branch"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git fetch "remote" "branch"</h2>
+            <p class="command__description">
+                Opisz: Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
+            </p>
+            <p class="command__example">Przykład użycia: git fetch "remote" "user_branch"</p>
+        </section>
+    </main>
+
+
 Grupa CE
 
 - git config --global user.email ""
   Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
-    
+
 - git commit -a -m ""
   Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
   Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
-  
+
 - git diff --staged
-  
+
 - git checkout -b "branch"
   W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
-  
-  
+
+
 - git log --graph --all
   Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
-  
+
 - git branch -d "branch"
 
 - git remote add "remote_name" "git url"
 
 - git fetch "remote" "branch"
-  
+
 
 Początek :)
   <p><b>git config --global user.name "John Doe"</b></br>
@@ -58,7 +124,7 @@ Początek :)
     Użycie opcji <b>git config --system</b> powoduje czytanie lub edytowanie konfiguracji z pliku /etc/gitconfig, która stosuje się do każdego użytkownika i repozytorium w systemie.</br>
     Opcja <b>git config --global</b> służy do czytania lub edytowania konfiguracji z pliku ~/.gitconfig lub ~/.config/git/config, który zawiera konfigurację specyficzną dla danego użytkownika.</br>
     Opcja <b>git config --local</b> czyta lub edytuje konfigurację z pliku .git/config, należącego do aktualnego repozytorium, określającego ustawienia specyficzne tylko dla niego. Jest to domyślny poziom konfiguracji, w przypadku braku określenia odpowiedniej opcji w poleceniu <b>git config</b>.</br>
-    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe. 
+    Ustawienia każdego z poziomów nadpisują te, które są określone na niższym poziomie, zgodnie z kolejnością: system, global, local, gdzie global nadpisuje system, a local wszytkie pozostałe.
   </p>
 
   <p><b>git commit -a -m ""</b></br>
@@ -67,10 +133,10 @@ Początek :)
 
   -a - also stages files (modified and deleted, but not new) (works almost like git add -u)
 
-  -m "" - with commit message inside "" 
+  -m "" - with commit message inside ""
   </p>
   git add . - dodaje wszystkie pliki do śledzenia
-  git checkout "branch" - przełączanie do nowej gałęzi
+  git checkout "branch" - przełączanie do nowej gałęzi (komenda wykona się poprawnie jedynie, gdy nowa gałąź została wcześniej utworzona za pomocą git branch "name")
   <br>
 <b>git branch "name"</b> - tworzy nową gałąź o podanej nazwie
 
@@ -79,6 +145,8 @@ Początek :)
     HEAD oznacza historię commitów (<i>Commit History</i>), która jest częścią jednego z trzech drzew, na których operuje git reset.
   </p>
 git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tworce'
+
+
   <section class="command">
     <h2 class="command__title">git config --global user.email ""</h2>
     <p class="command__description">
@@ -89,6 +157,7 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <h2 class="command__title">git diff --staged</h2>
     <p class="command__description">
       Pokazuje co zostało zmienione w obserwowanych plikach.
+      --staged jest synonimem ----cached.
     </p>
   </section>
   <section class="command">
@@ -117,31 +186,37 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
     </p>
   </section>
+  <section class="command">
+    <h2 class="command__title">git remote add "remote_name" "git url"</h2>
+    <p class="command__description">
+      Komenda służy do dodawania zdalnych repozytoriów pod skrótem. Dzięki temu będziemy mogli z łatwością odnosić się w przyszłości. W miejsce "remote name" wpsiujemy skrót pod jakim ma zostać zapisane dodatkowe repzytorium. W polu "git url" umieszczamy link do tego repozytorium. Przy pomocy tego następnym razem gdy będziemy chcieli np. zrobić fetch od naszego współpracownika wystarczy, że użyjemy fetch z parametrem, który wpisaliśmy w "remote name".
+    </p>
+  </section>
 </main>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Komendy Git</title>
 </head>
 <body>
-  
+  <h7>GRUPA CF</h7>
   <dl>
-    <dt>
+      <dt>
       git config --global color.ui true
     </dt>
     <dd>
-	 Zmiana kolorystyki wyników komend.  Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
+      Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.
     </dd>
     <dt>
       git commit "filename"
     </dt>
     <dd>
-      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'. Szczególnie przydatne gdy dokonaliśmy zmian w wielu plikach projektu, a commitować chcemy tylko jeden.
     </dd>
     <dt>
       git branch "name"
     </dt>
     <dd>
-      Komenda tworzy gałąź "name". Żeby przejść do niej należy napisać 'git checkout "name"'. Można skrócić te dwa polecenia do git checkout -b "name".
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
     </dd>
     <dt>
       git branch -v
@@ -153,13 +228,18 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git push "remote" "branch"
     </dt>
     <dd>
-      Pushuje lokalną gałąź "branch" do zdalnego repozytorium "remote".
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch". Inaczej wypycha gałąź branch na server remote.
+      Ogólna postać komendy: git push [nazwa zdalnego repozytorium] [nazwa gałęzi]
+      Przydatna gdy chcemy udostępnić dokonane przez nas zmiany członkom zespołu, którzy pracują przy tym samym projekcie.
     </dd>
     <dt>
       git log "branch" --not "branch"
     </dt>
     <dd>
-	  Wyświetlenie listy commitów z gałęzi "branch", bez gałęzi "branch", czyli nic nie zostanie wyświetlone, ponieważ przekazane argumenty są puste.
+     Słuzy do wyświetlenia listy commitów z gałęzi „branch” z wyjątkiem w postaci gałęzi „branch”.
+     W praktyce, nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument. 
+     Samej komendy git log używamy by spojrzeć w historię projektu i sprawdzić dokonane zmiany.
+
     </dd>
     <dt>
       git blame -C "filename"
@@ -171,15 +251,22 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git bisect (start, bad, good, reset)
     </dt>
     <dd>
-      Służy do wyszukiwania bugów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
+      Służy do wyszukiwania błędów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
     </dd>
 	<dt>
       gitk -all
     </dt>
     <dd>
-      gitk - The Git repository browse.
-      gitk -all - Show all refs (branches, tags, etc.).
+     gitk – Przeglądarka repozytorium na gicie. gitk -all – Wyświetla wszystkie branche, tagi, etc.  
+	 Przydatne gdy chcemy wyswietlic całą zawartość naszego repozytorium.
+	 
+
     </dd>
+    <dt>
+	git merge upstream/master
+    </dt>
+    <dd>
+	    Polecenie zacznie od próby aktualizowania, jeśli jakieś zmiany zostały przeprowadzone. W przeciwnym wypadku wyświetlony zostanie komunikat, że wszystie pliki są "Up-to-date".
   </dl>
 </body>
 </html>
