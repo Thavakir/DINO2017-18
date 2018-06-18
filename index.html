@@ -11,7 +11,57 @@
     <title>Komendy z Gita</title>
    
     <style>
-        .main_content {
+		body {
+			background: url(https://bobson.pl/wp-content/uploads/2017/07/programowanie-1300-1024x783.png);
+			margin-top: 30px;
+			margin-left:auto;
+			margin-right:auto;
+			width:800px;
+			margin-bottom:10px;
+			list-style: none;
+		}
+		
+		#obrazek {
+			background:url(https://itstep.az/wp-content/uploads/2018/01/github-1.png) center;
+			width:950px;
+			height:250px;
+		}
+		
+		#kontener{
+			width: 950px;
+			height: auto;
+			background-color: #FFFFFF;
+			position: absolute;
+			left: 50%;
+			top: 30%;
+			border-top:solid #DCDCDC 1px;
+			border-left:solid #DCDCDC 1px;
+			border-right:solid #DCDCDC 1px;
+			border-bottom:solid #DCDCDC 1px;
+			margin-left: -475px;
+			margin-top: -240px;
+		}
+		#stopka {
+			position:absolute;
+			text-align:right;
+			width:950px;
+			height:15px;
+			margin-left: -476px;
+			margin-top:5px;
+			left: 50%;
+			border-top:solid #dcdcdc 1px;
+			border-left:solid #dcdcdc 1px;
+			border-right:solid #dcdcdc 1px;
+			border-bottom:solid #dcdcdc 1px;
+			background:#FFFFFF;
+			font-size:11px;
+			font-family:Verdana, sans-serif;
+		}
+		#stopka a {
+			color: #000000;
+		}
+        
+		.main_content {
             white-space: pre-line;
 			
 			
@@ -43,7 +93,9 @@
     </style>
 </head>
  <center>
-<body class="container">
+<body>
+<div id="kontener">
+<div id="obrazek"></div>
     <main class="main_content">
  
         <h1 class="text-center">Grupa CE</h1>
@@ -196,27 +248,26 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Komendy Git</title>
-</head>
-<body>
+
   <h7>GRUPA CF</h7>
   <dl>
-     <dt>
+      <dt>
       git config --global color.ui true
     </dt>
     <dd>
-	 Zmiana kolorystyki komend.  Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
+      Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.
     </dd>
     <dt>
       git commit "filename"
     </dt>
     <dd>
-      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'. Szczególnie przydatne gdy dokonaliśmy zmian w wielu plikach projektu, a commitować chcemy tylko jeden.
     </dd>
     <dt>
       git branch "name"
     </dt>
     <dd>
-      Komenda tworzy gałąź o zadanej nazwie.
+      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
     </dd>
     <dt>
       git branch -v
@@ -228,20 +279,29 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git push "remote" "branch"
     </dt>
     <dd>
-      Pushuje lokalną gałąź "branch" do zdalnego repozytorium "remote".
+      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch". Inaczej wypycha gałąź branch na server remote.
+      Ogólna postać komendy: git push [nazwa zdalnego repozytorium] [nazwa gałęzi]
+      Przydatna gdy chcemy udostępnić dokonane przez nas zmiany członkom zespołu, którzy pracują przy tym samym projekcie.
     </dd>
     <dt>
       git log "branch" --not "branch"
     </dt>
     <dd>
-	  Wyświetlenie listy z jednego branch'a, bez podanego branch'a, czyli nic nie zostanie wyświetlone, ponieważ przekazane argumenty są puste.
+     Słuzy do wyświetlenia listy commitów z gałęzi „branch” z wyjątkiem w postaci gałęzi „branch”.
+     W praktyce, nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument. 
+     Samej komendy git log używamy by spojrzeć w historię projektu i sprawdzić dokonane zmiany.
+
     </dd>
     <dt>
       git blame -C "filename"
     </dt>
-      <dd>
+    <dd>
       Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
     </dd>
+    <dt>
+      git bisect (start, bad, good, reset)
+    </dt>
+    <dd>
       Służy do wyszukiwania błędów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
     </dd>
 	<dt>
@@ -259,5 +319,8 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <dd>
 	    Polecenie zacznie od próby aktualizowania, jeśli jakieś zmiany zostały przeprowadzone. W przeciwnym wypadku wyświetlony zostanie komunikat, że wszystie pliki są "Up-to-date".
   </dl>
+  <div id="stopka"><a>Contents: students computer science 2nd year - 2018 - Designed by Cezary Ptaszek&#xA9 </a></div>
+  </div>
+</div>
 </body>
 </html>
