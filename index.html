@@ -200,23 +200,23 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 <body>
   <h7>GRUPA CF</h7>
   <dl>
-      <dt>
+    <dt>
       git config --global color.ui true
     </dt>
     <dd>
-      Git domyślnie koloruje składnie. Przełącznik true włącza ten feature, false wyłącza.
+	 Zmiana kolorystyki wyników komend.  Zmienna color.ui określa domyślną wartość dla color.diff i color.grep, które odpowiadają za użycie koloru polecnia. Posiada również atrubuty: true, false oraz auto.
     </dd>
     <dt>
       git commit "filename"
     </dt>
     <dd>
-      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'. Szczególnie przydatne gdy dokonaliśmy zmian w wielu plikach projektu, a commitować chcemy tylko jeden.
+      Commituje zmianę tylko pliku o nazwie "filename", zachowując w staging wcześniej dodane pliki za pomocą 'git add'.
     </dd>
     <dt>
       git branch "name"
     </dt>
     <dd>
-      Tworzy nową gałąź o nazwie "name", ale do niej nie przechodzi, trzeba to zrobić za pomocą 'git checkout "name"'.
+      Komenda tworzy gałąź "name". Żeby przejść do niej należy napisać 'git checkout "name"'. Można skrócić te dwa polecenia do git checkout -b "name".
     </dd>
     <dt>
       git branch -v
@@ -228,18 +228,13 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
       git push "remote" "branch"
     </dt>
     <dd>
-      Synchronizacja z serwerem zdalnym "remote" gałęzi "branch". Inaczej wypycha gałąź branch na server remote.
-      Ogólna postać komendy: git push [nazwa zdalnego repozytorium] [nazwa gałęzi]
-      Przydatna gdy chcemy udostępnić dokonane przez nas zmiany członkom zespołu, którzy pracują przy tym samym projekcie.
+      Pushuje lokalną gałąź "branch" do zdalnego repozytorium "remote".
     </dd>
     <dt>
       git log "branch" --not "branch"
     </dt>
     <dd>
-     Słuzy do wyświetlenia listy commitów z gałęzi „branch” z wyjątkiem w postaci gałęzi „branch”.
-     W praktyce, nie wyświetla nic, gdyż ma wyświetlić listę commitów z gałęzi "branch" ale z wyjątkiem gałęzi o nazwie "branch", więc w sumie żadna gałąź nie jest podana jako argument. 
-     Samej komendy git log używamy by spojrzeć w historię projektu i sprawdzić dokonane zmiany.
-
+	  Wyświetlenie listy commitów z gałęzi "branch", bez gałęzi "branch", czyli nic nie zostanie wyświetlone, ponieważ przekazane argumenty są puste.
     </dd>
     <dt>
       git blame -C "filename"
@@ -247,10 +242,6 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <dd>
       Rozpoznaje linie w pliku "filename" skopiowane z innych plików, które były zmodyfikowane w ramach jednego commita. Przydatne przy reorganizacji struktury programu. 
     </dd>
-    <dt>
-      git bisect (start, bad, good, reset)
-    </dt>
-    <dd>
       Służy do wyszukiwania błędów w kodzie na podstawie commitów, złego (bad - obecnego lub innego commita w którym bug występuje) dobrego (good - commita kodu w ktorym bug nie występuje). Można wykorzystać nie tylko do wyszukiwania bugów ale i do obserwowania kiedy następiła jakaś zmiana w kodzie. "Start" służy jako rozpoczecie sekwencji wyszukiwania zmiany. Pierwszym krokiem jest wskazanie commita mniej więcej w połowie pomiędzy good i bad i przywrocenie kodu do stanu z tego commita. Jeżeli to w nim znajduje się błąd to oznaczamy go jako bad z użyciem 'git bisect bad', a jeżeli nie wystepuje to oznaczamy jako 'git bisect good' i ponownie otrzymujemy commita w którym możemy mieć tego buga. Proces powtarzamy do znalezienia commita który wprowadza bug/zmiany. Reset to powrót do stanu z przed bisekcji, czyli powrót do oryginalnego head.  
     </dd>
 	<dt>
