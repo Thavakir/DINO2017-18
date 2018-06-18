@@ -268,5 +268,25 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
     <dd>
 	    Polecenie zacznie od próby aktualizowania, jeśli jakieś zmiany zostały przeprowadzone. W przeciwnym wypadku wyświetlony zostanie komunikat, że wszystie pliki są "Up-to-date".
   </dl>
+	</br>
+	Grupa CG</br>
+
+  git commit -a -m "" Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.</br>
+                      Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.</br>
+                      UWAGA: Nowe pliki których wcześniej w ogóle nie było nie są dodawane. Trzeba je oddzielnie dodać używając git add.</br>
+</br>
+  git add .           Dodaje wszystkie zmienione pliki do commita</br>
+</br>
+  git checkout "branch"   Zmienia aktywny branch na wybrany przez użytkownika</br>
+</br>
+  git remote add "remote_name" "git url"    To polecenie łączy repozytorium "remote_name" z repozytorium stworzonym gdzieś na serwerze o podanym adresie url.</br>
+</br>
+  git blame -C "filename"     Polecenie wykryje linie przeniesione, skopiowane z innych plikow, które zostały zmodyfikowane w tym samym zatwierdzeniu.</br>
+</br>
+  git branch "name"     Właśnie utworzyliśmy gałąź "name".
+
+</body>
+</html>
+
 </body>
 </html>
