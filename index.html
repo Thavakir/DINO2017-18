@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
  
 <head>
 
@@ -39,9 +38,6 @@
     <style>
         .main_content {
             white-space: pre-line;
-			
-			
-			
         }
        
         .command {
@@ -68,6 +64,8 @@
         }
     </style>
 </head>
+<body>
+  <main class="main_content">
  <center>
 <body class="container">
     <main class="main_content">
@@ -116,12 +114,27 @@
         </section>
     </main>
 
-
 Grupa CE
 
-- git config --global user.email ""
+- <b>git config --global user.email ""</b>
   Powyższe polecenie służy do ustanowienia lub zmiany adresu e-mail powiązanego z Gitem.
 
+- <b>git commit -a -m ""</b>
+  Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
+  Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
+
+- <b>git diff --staged</b>
+  Komenda pokazuje zmiany, które zostały wysłane do poczekalni, ale różnią się od ostatniej migawki. W przeciwieństwie do git status, pokazuje nam rzeczywiste zmiany w postaci kodu.
+  Przydatne, gdy zmienimy coś w pliku i dodamy do śledzenia za pomocą git add, aby sprawdzić, co dokładnie zostało zmienione.
+
+
+- <b>git checkout -b "branch"</b>
+  W ramach naszego repozytorium, to polecenie tworzy jego gałąź o nazwie podanej w cudzysłowiu, czyli branch, i się na nią przełącza.
+
+
+- <b>git log --graph --all</b>
+  Polecenie wyświetlające historię naszego repozytorium w postacji graficznej, czyli w tym wypadku jako graf.
+=======
 - git commit -a -m ""
   Po dodaniu wszystkich plików musimy zatwierdzić zmiany w projekcie, a służy do tego polecenie commit.
   Powyższe polecenie ma właśnie takie działanie, z tą różnicą, że opcja -a dokonuje zatwierdzenia zmian dla podanych plików automatycznie.
@@ -137,10 +150,13 @@ Grupa CE
 
 - git branch -d "branch"
 
-- git remote add "remote_name" "git url"
+- <b>git branch -d "branch"</b>
+
+- <b>git remote add "remote_name" "git url"</b>
+
+- <b>git fetch "remote" "branch"</b>
 
 - git fetch "remote" "branch"
-
 
 Początek :)
   <p><b>git config --global user.name "John Doe"</b></br>
