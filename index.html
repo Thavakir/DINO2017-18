@@ -73,41 +73,55 @@
         <section class="command">
             <h2 class="command__title">Komenda: git config --global user.email "user_name"</h2>
             <p class="command__description">
-                Opisz: Ustawia globalnie email użytkownika.</p>
+                Polecenie służy konfiguracji adresu e-mail konta Git. Polecenia warto użyć od razu po instalacji Git jest to ważne, ponieważ każda operacja zatwierdzenia w Git korzysta z tych informacji, które stają się integralną częścią zatwierdzeń przesyłanych i pobieranych później do i z serwera</p>
             <p class="command__example">Przykład użycia: git config --global user.email "user@st.amu.edu.pl"</p>
+        </section>
+        <section class="command">
+            <h2 class="command__title">Komenda: git commit -a -m ""</h2>
+            <p class="command__description">
+                Polecenie służy do zatwierdzenia zmian w projekcie. Opcja -a dokonuje zatwierdzenia zmian podanych plików automatycznie Jak wiemy zmiany w projekcie musimy zatwierdzić. Po dodaniu do składni polecenia git commit opcji -a każdy zmieniony plik, który jest już śledzony, automatycznie trafi do poczekalni, dzięki czemu pominiesz część git add.
+            </p>
+            <p class="command__example">Komenda: git commit -a -m ""</p>
         </section>
         <section class="command">
             <h2 class="command__title">Komenda: git diff --staged</h2>
             <p class="command__description">
-                Opisz: Pokazuje co zostało zmienione w obserwowanych plikach.
+                Polecenie porównuje zmiany z poczekalni z ostatnią migawką. Polecenie to jest bardzo ważne. Używając Gita chcemy kontrolować kod. Dzięki porównaniu zaktualizowanej wersji z poprzednią mamy większą kontrolę nad kodem, a tą umożliwa nam to polecenie.
             </p>
             <p class="command__example">Przykład użycia: git diff --staged</p>
         </section>
         <section class="command">
             <h2 class="command__title">Komenda: git checkout -b "branch"</h2>
             <p class="command__description">
-                Opisz: Przechodzi na gałąź o nazwie branch, jeśli taka nie istnieje to tworzy nową.
+                Polecenie tworzy nową gałąź w obecnym repozytorium o nazwie podanej w cudzysłowiu i przełącza się na nią. Komendę wykorzystujemy gdy chcemy wprowadzić pewne zmany w kodzie, a niekoniecznie pracować w obecnej gałęzi. Polecenie możemy również użyć dodając nową osobę do repozytorium, tak aby mogła ona od razu zacząć pracować na własnej gałęzi
             </p>
             <p class="command__example">Przykład użycia: git checkout -b "user_branch"</p>
         </section>
         <section class="command">
             <h2 class="command__title">Komenda: git log --graph --all</h2>
             <p class="command__description">
-                Opisz: Wypisuje listę poprzednich commitów. Opcja graph dodaje graficzny podgląd gałęzi. Opcja all pokazuje też inne gałęzie.
+                Polecenie wyświetlające historię naszego repozytorium w postacji grafu Polecenia używamy gdy chcemy zobaczyć w formie tekstowej historie Committów, obejrzeć zmiany itp.
             </p>
             <p class="command__example">Przykład użycia: git log --graph --all</p>
         </section>
         <section class="command">
             <h2 class="command__title">Komenda: git branch -d "branch"</h2>
             <p class="command__description">
-                Opisz: Usuwa gałąź o nazwie branch.
+                Polecenie usuwa gałąź o nazwie podanej w cudzysłowiu. Polecenia używamy gdy chcemy usunąć daną gałąź z repozytorium. Możemy go użyć gdy chcemy wykluczyć część kodu napisanego w danej gałęzi przez jednego z użytkowników
             </p>
             <p class="command__example">Przykład użycia: git branch -d "user_branch"</p>
         </section>
         <section class="command">
+            <h2 class="command__title">Komenda: git remote add "remote_name" "git url"</h2>
+            <p class="command__description">
+                Polecenie służy do dodania zdalnego repozytorium, którego nazwę podajemy w pierwszym cudzysłowiu, a URL do niego w drugim. Praca przy dużym projekcie wymaga użycia zdalnego repozytorium. Komendy używamy w celu współpracy w grupie, zarządzania zdalnym projektem itp.
+            </p>
+            <p class="command__example">Przykład użycia: git remote add "remote_name" "git url"</p>
+        </section>
+        <section class="command">
             <h2 class="command__title">Komenda: git fetch "remote" "branch"</h2>
             <p class="command__description">
-                Opisz: Pobiera wszystkie zmiany z remote'a o nazwie remote z gałęzi branch.
+                Polecenie służy do uzyskiwania danych ze zdalnych repozytorium, podajemy nazwę zdalnego repozytorium oraz gałąź. Polecenia możemy użyć gdy pracujemy nad dużym projektem w kilka osób. Polecenie pozwoli nam na uzyskanie potrzebnych nam danych ze zdalnego repozytorium
             </p>
             <p class="command__example">Przykład użycia: git fetch "remote" "user_branch"</p>
         </section>
@@ -314,11 +328,6 @@ git -C blame - pozwala sprawdzic, kto jest autorem danej linii kodu, 'obwinic tw
 	 
 
     </dd>
-    <dt>
-	git merge upstream/master
-    </dt>
-    <dd>
-	    Polecenie zacznie od próby aktualizowania, jeśli jakieś zmiany zostały przeprowadzone. W przeciwnym wypadku wyświetlony zostanie komunikat, że wszystie pliki są "Up-to-date".
   </dl>
 
 </body>
